@@ -34,7 +34,7 @@ model Server {
   id      Int  @id @default(autoincrement())
   name    String
   imageUrl  String @db.Text
-  inviteCode  String @db.Text
+  inviteCode  String @unique
 
   profileId   Int
   profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
