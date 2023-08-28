@@ -24,7 +24,7 @@ export const InviteModal = () => {
   const { onOpen, isOpen, onClose, type, data } = useModal();
   const origin = userOrigin();
 
-  const isModalOpen = isOpen && type == "invite";
+  const isModalOpen = isOpen && type === "invite";
   const { server } = data;
 
   const inviteUrl = `${origin}/invite/${server?.inviteCode}`;

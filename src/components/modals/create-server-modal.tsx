@@ -24,6 +24,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { FileUpload } from "@/components/file-upload";
 import { useModal } from "@/hooks/use-modal-store";
+import { Loader } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(1, {
@@ -39,7 +40,7 @@ export const CreateServerModal = () => {
   const router = useRouter();
   const { isOpen, onClose, type } = useModal();
 
-  const isModalOpen = isOpen && type == "createServer";
+  const isModalOpen = isOpen && type === "createServer";
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -132,6 +133,7 @@ export const CreateServerModal = () => {
             <DialogFooter className="bg-gray-100 px-6 py-4 ">
               <Button disabled={isLoading} variant="primary">
                 Create
+                {isLoading && <Loader className="animate-spin w-4 h-4 ml-2" />}
               </Button>
             </DialogFooter>
           </form>

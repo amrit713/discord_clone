@@ -51,7 +51,7 @@ export const MembersModal = () => {
 
   const router = useRouter();
 
-  const isModalOpen = isOpen && type == "members";
+  const isModalOpen = isOpen && type === "members";
   const { server } = data as { server: ServerWithMembersWithProfiles };
 
   const onKick = async (memberId: number) => {

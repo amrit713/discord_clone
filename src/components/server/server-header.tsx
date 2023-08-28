@@ -28,8 +28,7 @@ interface ServerHeaderProps {
 }
 
 export const ServerHeader: FC<ServerHeaderProps> = ({ server, role }) => {
-  const { isOpen, onOpen } = useModal();
-  console.log(isOpen);
+  const { onOpen } = useModal();
 
   const isAdmin = role === MemberRole.ADMIN;
   const isModerator = isAdmin || role === MemberRole.MODERATOR;
@@ -75,7 +74,10 @@ export const ServerHeader: FC<ServerHeaderProps> = ({ server, role }) => {
         )}
 
         {isModerator && (
-          <DropdownMenuItem className=" px-3 py-2 text-sm cursor-pointer">
+          <DropdownMenuItem
+            className=" px-3 py-2 text-sm cursor-pointer"
+            onClick={() => onOpen("createChannel")}
+          >
             Create Channel
             <PlusCircle className="h-4 w-4 ml-auto" />
           </DropdownMenuItem>
