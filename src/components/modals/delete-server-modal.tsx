@@ -62,7 +62,7 @@ export const DeleteServerModal = () => {
               disabled={isLoading}
               onClick={onClose}
               variant="ghost"
-              className="hover:bg-red-500"
+              className="hover:bg-rose-500"
             >
               Cancel
             </Button>
