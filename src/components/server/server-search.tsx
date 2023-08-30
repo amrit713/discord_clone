@@ -27,7 +27,7 @@ interface ServerSearchProps {
   }[];
 }
 
-const ServerSearch: FC<ServerSearchProps> = ({ data }) => {
+export const ServerSearch: FC<ServerSearchProps> = ({ data }) => {
   const [open, setOpen] = useState(false);
   const router = useRouter();
   const params = useParams();
@@ -105,5 +105,3 @@ const ServerSearch: FC<ServerSearchProps> = ({ data }) => {
     </>
   );
 };
-
-export default ServerSearch;
