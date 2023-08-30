@@ -79,6 +79,10 @@ export async function PATCH(
       return new NextResponse("Channel ID missing", { status: 400 });
     }
 
+    if (name === "general") {
+      return new NextResponse("Name cannot be 'genral'", { status: 400 });
+    }
+
     const server = await db.server.update({
       where: {
         id: +serverId,
