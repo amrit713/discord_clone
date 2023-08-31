@@ -20,7 +20,7 @@ interface ServerSidebarProps {
   serverId: string;
 }
 
-async function ServerSidebar({ serverId }: ServerSidebarProps) {
+export async function ServerSidebar({ serverId }: ServerSidebarProps) {
   const profile = await currentProfile();
 
   if (!profile) return redirectToSignIn();
@@ -202,5 +202,3 @@ async function ServerSidebar({ serverId }: ServerSidebarProps) {
     </div>
   );
 }
-
-export default ServerSidebar;

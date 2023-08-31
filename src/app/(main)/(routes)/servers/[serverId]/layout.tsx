@@ -4,7 +4,7 @@ import { currentProfile } from "@/lib/current-profile";
 import { redirectToSignIn } from "@clerk/nextjs";
 import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
-import ServerSidebar from "@/components/server/server-sidebar";
+import { ServerSidebar } from "@/components/server/server-sidebar";
 
 async function ServerIdLayout({
   children,
