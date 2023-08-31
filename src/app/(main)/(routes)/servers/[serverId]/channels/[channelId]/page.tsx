@@ -40,8 +40,7 @@ async function ChannelIdPage({ params }: ChannelIdPageProps) {
     <ChatHeader
       name={channel.name}
       serverId={`${channel.serverId}`}
-      type="conversation"
-      imageUrl={profile.imageUrl}
+      type="channel"
     />
   );
 }
