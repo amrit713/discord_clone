@@ -39,7 +39,7 @@ async function ServerIdLayout({
         <ServerSidebar serverId={params.serverId} />
       </div>
 
-      <main className="h-4 md:pl-60">{children}</main>
+      <main className="h-full md:pl-60">{children}</main>
     </div>
   );
 }
