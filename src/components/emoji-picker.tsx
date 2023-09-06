@@ -16,7 +16,7 @@ interface EmojiPickerProps {
   onChange: (value: string) => void;
 }
 
-function EmojiPicker({ onChange }: EmojiPickerProps) {
+export function EmojiPicker({ onChange }: EmojiPickerProps) {
   const { resolvedTheme } = useTheme();
   return (
     <Popover>
@@ -37,5 +37,3 @@ function EmojiPicker({ onChange }: EmojiPickerProps) {
     </Popover>
   );
 }
-
-export default EmojiPicker;
