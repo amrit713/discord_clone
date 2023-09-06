@@ -159,7 +159,7 @@ model DirectMessage{
   id Int @id @default(autoincrement())
 
   content String @db.Text
-  fileUrl   String @db.Text
+  fileUrl   String? @db.Text
 
   memberId Int
   member Member @relation(fields: [memberId], references: [id], onDelete: Cascade)
