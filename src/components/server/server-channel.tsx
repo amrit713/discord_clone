@@ -26,7 +26,7 @@ export const ServerChannel: FC<ServerChannelProps> = ({
   role,
 }) => {
   const router = useRouter();
-  const params = useParams();
+  const params: Record<string, string | string[]> | null = useParams();
   const { onOpen } = useModal();
 
   const Icon = iconMap[channel.type];
@@ -46,7 +46,8 @@ export const ServerChannel: FC<ServerChannelProps> = ({
       onClick={onClick}
       className={cn(
         "group px-2 py-2 rounded-md flex items-center gap-x-2 w-full hover:bg-zinc-700/10 dark:hover:bg-zinc-700/50  transition mb-1 ",
-        +params?.channelId === channel.id &&
+        params &&
+          +params?.channelId === channel.id &&
           " bg-zinc-700/20 dark:bg-zinc-700/50"
       )}
     >
@@ -54,7 +55,8 @@ export const ServerChannel: FC<ServerChannelProps> = ({
       <p
         className={cn(
           "line-clamp-1 font-semibold text-sm text-zinc-500 group-hover:text-zinc-600 dark:text-zinc-400 dark:group-hover:text-zinc-300 transition lowercase",
-          +params?.channelId === channel.id &&
+          params &&
+            +params?.channelId === channel.id &&
             "text-primary dark:text-zinc-200 dark:group-hover:text-white"
         )}
       >
